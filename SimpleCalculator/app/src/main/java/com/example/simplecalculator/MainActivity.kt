@@ -46,8 +46,6 @@ class MainActivity : AppCompatActivity() {
         onScreen = onScreen.replace('x', '*')
         if (findPercent >= 0) {
             onScreen = onScreen.replace("%", "/100*")
-//            val percent = ExpressionBuilder(onScreen).build()
-//            onScreen = percent.evaluate().toString()
         }
         val calc = ExpressionBuilder(onScreen).build()
         val result: Double = calc.evaluate()
