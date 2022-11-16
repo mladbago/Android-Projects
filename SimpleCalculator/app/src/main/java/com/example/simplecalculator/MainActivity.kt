@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import net.objecthunter.exp4j.ExpressionBuilder
+import kotlin.math.ln
 
 class MainActivity : AppCompatActivity() {
     lateinit var textOnCalc : TextView
@@ -34,7 +35,11 @@ class MainActivity : AppCompatActivity() {
         val result = calc.evaluate()
         textOnCalc.text = textFormatter(result.toString())
     }
-
+    fun onLog(view: View) {
+        var onScreen = textOnCalc.text.toString()
+        val calc = ln(onScreen.toDouble());
+        textOnCalc.text = calc.toString()
+    }
     fun onEquals(view: View) {
         var onScreen = textOnCalc.text.toString()
         val findPercent : Int = onScreen.indexOf("%", 0)
@@ -45,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 //            onScreen = percent.evaluate().toString()
         }
         val calc = ExpressionBuilder(onScreen).build()
-        val result = calc.evaluate()
+        val result: Double = calc.evaluate()
         textOnCalc.text = textFormatter(result.toString())
     }
 
