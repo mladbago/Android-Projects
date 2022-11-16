@@ -34,7 +34,7 @@
         android:id="@+id/buttonLogarithm"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="onOperator"
+        android:onClick="onLog"
         android:text="log"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
