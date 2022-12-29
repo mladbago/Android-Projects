@@ -1,0 +1,6 @@
+name: bmladenov
+version: "3.8"
+
+services:
+    mydocker: 
+        build: .
