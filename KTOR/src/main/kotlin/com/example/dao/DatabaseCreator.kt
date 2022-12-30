@@ -15,7 +15,7 @@ object DatabaseCreator {
 
         val database = Database.connect(url, driverName)
         transaction(database) {
-            SchemaUtils.create(Categories, Products)
+            SchemaUtils.create(Categories, Products, Users, UserDisplays)
         }
 
     }
