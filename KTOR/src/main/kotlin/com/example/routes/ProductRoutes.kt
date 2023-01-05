@@ -11,17 +11,10 @@ import io.ktor.server.routing.*
 import io.ktor.server.util.*
 
 fun Route.productRouting() {
-    authenticate("auth-user") {
         route("/products") {
-            get("/hello") {
-                val principal = call.principal<JWTPrincipal>()
-                val username = principal!!.payload.getClaim("username").asString()
-                val expiresAt = principal.expiresAt?.time?.minus(System.currentTimeMillis())
-                call.respondText("Hello, $username! Token is expired at $expiresAt ms.")
-            }
 
             get {
-                call.respond(mapOf("products" to daoProduct.getEveryProduct()))
+                call.respond(daoProduct.getEveryProduct())
             }
 
             get("getProduct/{id}") {
@@ -65,5 +58,4 @@ fun Route.productRouting() {
                 call.respondRedirect("/products")
             }
         }
-    }
 }
