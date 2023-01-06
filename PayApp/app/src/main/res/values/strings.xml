@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PayApp</string>
+
+    <string name="type_your_card_number">Type your Card Number</string>
+    <string name="type_your_CCV">Type Your CCV</string>
+    <string name="sign_in">Sign In</string>
+    <string name="not_registered_yet_sign_up">Not Registered Yet , Sign Up !</string>
+</resources>
